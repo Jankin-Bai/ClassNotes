@@ -1,14 +1,14 @@
 @echo off
-:: Äã¿ÉÒÔÊ¹ÓÃÎÄ±¾±à¼­Æ÷£¨ÀıÈç¼ÇÊÂ±¾£©±à¼­¸ÃÅú´¦ÀíÎÄ¼ş
-:: °´ÕÕÏÂÁĞ¸ñÊ½Ìí¼ÓĞÂµÄ KMS ·şÎñÆ÷¡£²»·ÖË³Ğò¡£
+:: ä½ å¯ä»¥ä½¿ç”¨æ–‡æœ¬ç¼–è¾‘å™¨ï¼ˆä¾‹å¦‚è®°äº‹æœ¬ï¼‰ç¼–è¾‘è¯¥æ‰¹å¤„ç†æ–‡ä»¶
+:: æŒ‰ç…§ä¸‹åˆ—æ ¼å¼æ·»åŠ æ–°çš„ KMS æœåŠ¡å™¨ã€‚ä¸åˆ†é¡ºåºã€‚
 
-::ÒÑËµ¹ı³¤ÆÚÓĞĞ§
+::å·²è¯´è¿‡é•¿æœŸæœ‰æ•ˆ
 set a1=54.223.212.31
 set a2=kms.guowaifuli.com
 set a3=mhd.kmdns.net
 set a4=xykz.f3322.org
 
-::Î´Ëµ³¤ÆÚÓĞĞ§
+::æœªè¯´é•¿æœŸæœ‰æ•ˆ
 set a5=106.186.25.239
 set a6=110.noip.me
 set a7=3rss.vicp.net:20439
@@ -18,13 +18,13 @@ set a10=kms.didichuxing.com
 set a11=skms.ddns.net
 set a12=zh.us.to
 
-::·ÖÊ±¶ÎÓĞĞ§
+::åˆ†æ—¶æ®µæœ‰æ•ˆ
 set a13=franklv.ddns.net
 set a14=k.zpale.com
 set a15=m.zpale.com
 set a16=mvg.zpale.com
 
-::ÎÒ2015-8-26²âÊÔÊ±ÒÑ¾­Ê§Ğ§£¬²»ÅÅ³ı²»ÇÉÓöµ½¶ÌÊ±Ê§Ğ§ ¼°ÒÔºó¸´»îµÄ¿ÉÄÜ
+::æˆ‘2015-8-26æµ‹è¯•æ—¶å·²ç»å¤±æ•ˆï¼Œä¸æ’é™¤ä¸å·§é‡åˆ°çŸ­æ—¶å¤±æ•ˆ åŠä»¥åå¤æ´»çš„å¯èƒ½
 set a17=122.226.152.230
 set a18=222.76.251.188
 set a19=annychen.pw
@@ -36,9 +36,9 @@ set a24=kms.xspace.in
 set a25=winkms.tk
 set a26=wrlong.com
 
-:: ×î¶à¿ÉÒÔÉèÖÃ 50 ¸öKMS·şÎñÆ÷
+:: æœ€å¤šå¯ä»¥è®¾ç½® 50 ä¸ªKMSæœåŠ¡å™¨
 
-::======================= ÒÔÏÂÄÚÈİÎŞĞè¸ü¸Ä ======================
+::======================= ä»¥ä¸‹å†…å®¹æ— éœ€æ›´æ”¹ ======================
 mode con cols=85 lines=25
 setlocal EnableDelayedExpansion&color 3e
 title KMS_Activation for Win10 - [hnfeng]
@@ -62,7 +62,7 @@ if defined %EditionID% (echo.
 	cscript //Nologo %windir%\system32\slmgr.vbs /ipk !%EditionID%!
 	for /L %%a in (1,1,50) do (if defined a%%a (echo %bar%%bar% &echo %str3% !a%%a! &echo.
 		cscript //Nologo %windir%\system32\slmgr.vbs /skms !a%%a!
-		(cscript //nologo %windir%\system32\slmgr.vbs /ato) ^| findstr /i "successful ³É¹¦ ¦¨¥\" && (call :successful !a%%a!)))
+		(cscript //nologo %windir%\system32\slmgr.vbs /ato) ^| findstr /i "successful æˆåŠŸ Î˜î™¢" && (call :successful !a%%a!)))
        	goto failure) else (echo.&echo %str4% "%EditionID%" &echo.&echo %bar9% & pause>nul)
 exit
 
@@ -88,33 +88,33 @@ goto :EOF
 :strset
 chcp | find "936" > nul && (
 	set bar=======================
-	set str1=×Ô¶¯¼ì²é Win10 µÄ°æ±¾£¬µ¼Èë¶ÔÓ¦µÄ KMS ÃÜÔ¿
-	set str2=È»ºó×Ô¶¯Öğ¸ö³¢ÊÔ KMS ·şÎñÆ÷À´¼¤»î Win10
-	set str3=ÕıÔÚ³¢ÊÔµÄ KMS ·şÎñÆ÷: 
-	set str4=Î´·¢ÏÖ¶ÔÓ¦µ±Ç°ÏµÍ³°æ±¾Ëù¶¨ÒåµÄÃÜÔ¿: 
-	set str5=¹§Ï²£¡ÒÑ¾­³É¹¦¼¤»î£¡
-	set str6=ÔËÆø²»¼ÑÅ¶£¬KMS ·şÎñÆ÷È«²¿ÎŞ·¨Á¬½Ó£¬¼¤»îÊ§°Ü¡£
-	set str7=µ±Ç°²Ù×÷ÏµÍ³²»ÊÇ Windows 10. 
-	set str8=Çë¼ì²éÍøÂçÊÇ·ñÍ¨³©¡£
-	set str9=°´ÈÎÒâ¼üÍË³ö...
-	set str10=Ê¹ÓÃµÄ KMS ·şÎñÆ÷ÊÇ:
-	set str11=Èô¼¤»î³É¹¦£¬±³¾°±äºìÉ«¡£ÈôÊ§°Ü£¬±³¾°±äÀ¶É«¡£
-	set str12=ÕıÔÚ¼ì²âÍøÂç£¬ÇëÉÔµÈ...
+	set str1=è‡ªåŠ¨æ£€æŸ¥ Win10 çš„ç‰ˆæœ¬ï¼Œå¯¼å…¥å¯¹åº”çš„ KMS å¯†é’¥
+	set str2=ç„¶åè‡ªåŠ¨é€ä¸ªå°è¯• KMS æœåŠ¡å™¨æ¥æ¿€æ´» Win10
+	set str3=æ­£åœ¨å°è¯•çš„ KMS æœåŠ¡å™¨: 
+	set str4=æœªå‘ç°å¯¹åº”å½“å‰ç³»ç»Ÿç‰ˆæœ¬æ‰€å®šä¹‰çš„å¯†é’¥: 
+	set str5=æ­å–œï¼å·²ç»æˆåŠŸæ¿€æ´»ï¼
+	set str6=è¿æ°”ä¸ä½³å“¦ï¼ŒKMS æœåŠ¡å™¨å…¨éƒ¨æ— æ³•è¿æ¥ï¼Œæ¿€æ´»å¤±è´¥ã€‚
+	set str7=å½“å‰æ“ä½œç³»ç»Ÿä¸æ˜¯ Windows 10. 
+	set str8=è¯·æ£€æŸ¥ç½‘ç»œæ˜¯å¦é€šç•…ã€‚
+	set str9=æŒ‰ä»»æ„é”®é€€å‡º...
+	set str10=ä½¿ç”¨çš„ KMS æœåŠ¡å™¨æ˜¯:
+	set str11=è‹¥æ¿€æ´»æˆåŠŸï¼ŒèƒŒæ™¯å˜çº¢è‰²ã€‚è‹¥å¤±è´¥ï¼ŒèƒŒæ™¯å˜è“è‰²ã€‚
+	set str12=æ­£åœ¨æ£€æµ‹ç½‘ç»œï¼Œè¯·ç¨ç­‰...
 )
 chcp | find "950" > nul && (
 	set bar=======================
-	set str1=¦Û°ÊÀË¬d Win10 ªºª©¥»¡A¾É¤J¹ïÀ³ªº KMS ±KÆ_
-	set str2=µM¦Z¦Û°Ê³v­Ó¹Á¸Õ KMS ªA°È¾¹¨Ó¿E¬¡ Win10
-	set str3=¥¿¦b¹Á¸Õªº KMS ªA°È¾¹: 
-	set str4=¥¼µo²{¹ïÀ³·í«e¨t²Îª©¥»©Ò©w¸qªº±KÆ_: 
-	set str5=®¥³ß, ¤w¸g¦¨¥\±Ò¥Î¡C
-	set str6=¹BÉa¤£¨Î®@¡AKMS ªA°È¾¹¥ş³¡µLªk³s±µ¡A±Ò¥Î¥¢±Ñ¡C
-	set str7=·í«e¾Ş§@¨t²Î¤£¬O Windows 10. 
-	set str8=½ĞÀË¬dÊIµ¸¬O§_³qºZ¡C
-	set str9=«ö¥ô·NÁä°h¥X...
-	set str10=¨Ï¥Îªº KMS ªA°È¾¹¬O:
-	set str11=­Y¿E¬¡¦¨¥\¡A­I´ºÅÜ¬õ¦â¡C­Y¥¢±Ñ¡A­I´ºÅÜÂÅ¦â¡C
-	set str12=¥¿¦bÀË´úÊIµ¸¡A½Ğµyµ¥...
+	set str1=îç¬†æµªç© Win10 î€™î€ˆã‚»î“‡æ—§î—°ç™¸è±î€™ KMS ç›èŠ²
+	set str2=ç¤›î›€îç¬†ç¡‹î…Œæ²½åˆš KMS ç‹å­ç«Ÿã„“ç¸€î‚¼ Win10
+	set str3=ã‚¿î›ˆæ²½åˆšî€™ KMS ç‹å­ç«Ÿ: 
+	set str4=ã‚¼ç¥‡ç·ç™¸è±è®½ç¡â•°å‚î€ˆã‚»â”®ï¹šç«¡î€™ç›èŠ²: 
+	set str5=î…¼å°º, î˜ç«’Î˜î™¢å¸ãƒî“‰
+	set str6=ç¬²è’©ãƒã„ç“³î“‡KMS ç‹å­ç«Ÿî„åœºç¤šçŒ­ç¡ˆé’¡î“‡å¸ãƒã‚¢æ¯–î“‰
+	set str7=è®½ç¡å·¨îœ†â•°å‚ãƒçŒ Windows 10. 
+	set str8=å«æµªç©è”è¹ˆçŒîœ¥ç¡„ç¯«î“‰
+	set str9=î‚³ãƒ´ç¨®é¾„ç™¶î™...
+	set str10=ã„ãƒî€™ KMS ç‹å­ç«ŸçŒ:
+	set str11=ç’ç¸€î‚¼Î˜î™¢î“‡ç’‰æ˜¥è·‘î„ï¸¹î“‰ç’ã‚¢æ¯–î“‡ç’‰æ˜¥è·‘å±¡ï¸¹î“‰
+	set str12=ã‚¿î›ˆæµªä»£è”è¹ˆî“‡å«ç¥”å•...
 )
 chcp | find "437" > nul && (
 	set bar=======================
