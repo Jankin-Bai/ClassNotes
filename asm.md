@@ -1,6 +1,6 @@
-#［ARM Cortex-R Series](https://developer.arm.com/documentation/den0042/latest/Introduction-to-Assembly-Language)
-
-## The ARM instruction sets 指令集
+# ARM Cortex-R Series (Armv7-R) Programmer’s Guide
+## Introduction to Assembly Language
+### The ARM instruction sets 指令集
  The ARMv7 architecture is a 32-bit processor architecture. It is a load/store architecture, meaning that data-processing instructions operate on values in general purpose registers. Only load and store instructions access memory. General purpose registers are also 32 bits. Throughout this book
  
  when we refer to a word, we mean 32 bits. 
